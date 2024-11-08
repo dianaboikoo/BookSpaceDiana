@@ -1,0 +1,368 @@
+/*ACCOUNT PAGE*/
+
+.account-page {
+  width: 100vw; 
+  max-width: 390px;
+  margin: 0 auto;
+  padding: 16px;
+  background-color: #f9f9f9;
+  color: #333;
+  text-align: center;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.account-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.profile-image {
+  width: 80px;
+  height: 80px;
+  background-color: #eee;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  border-color: 2px #48302D;
+}
+
+.profile-info h3 {
+  margin: 8px 0 4px;
+  font-size: 18px;
+}
+
+.profile-info p {
+  color: #888;
+  font-size: 14px;
+}
+
+.profile-stats {
+  display: flex;
+  justify-content: space-around;
+  margin: 16px 0;
+}
+
+.profile-stats div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-stats strong {
+  font-size: 16px;
+}
+
+.profile-stats span {
+  font-size: 12px;
+  color: #888;
+}
+
+.profile-options {
+  margin-top: 16px;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  font-size: 16px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.logout-button {
+  width: 50%;
+  padding: 10px;
+  margin: 46px 0;
+  background-color: #48302D;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: 390px;
+  width: 100vw; /* Full viewport width */
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+}
+
+.nav-icon {
+  font-size: 24px;
+  color: #555;
+}
+
+
+
+
+
+/*MY REVIEWS PAGE*/
+
+.my-reviews-page {
+    width: 100%;
+  width: 100vw;
+  height: 100vh; 
+  max-width: 390px;
+  margin: 0 auto;
+  padding: 16px;
+  background-color: #f9f9f9;
+  color: #333;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.my-reviews-page h1 {
+  display: flex;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.review-card {
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Adds space between info and options */
+  margin-bottom: 8px;
+}
+
+.review-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  margin-right: 12px;
+  border: 2px solid #48302D;
+  object-fit: cover;
+}
+
+.review-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left; /* Align text to the left */
+  flex-grow: 1;
+}
+
+.review-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #48302D;
+}
+
+.review-date {
+  font-size: 12px;
+  color: #888;
+  margin-top: 4px;
+}
+
+.review-options {
+  margin-left: auto;
+  color: #888;
+  cursor: pointer;
+}
+
+.review-rating {
+  font-size: 16px;
+  color: #FFD700;
+  text-align: left;
+  margin: 8px 0;
+}
+
+.review-comment {
+  font-size: 14px;
+  color: #333;
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.review-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-start;
+}
+
+.edit-button,
+.delete-button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.edit-button {
+  background-color: #48302D;
+  color: #F4F2F0;
+}
+
+.delete-button {
+  background-color: #48302D;
+  color: #F4F2F0;
+}
+
+
+
+
+/* MY NOTES PAGE */
+
+.notes-page {
+  width: 100vw; 
+  max-width: 390px;
+  margin: 0 auto;
+  padding: 16px;
+  background-color: #f9f9f9;
+  color: #333;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.notes-page h2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #48302D; /* Adds a bit of color contrast */
+}
+
+.note-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.note-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+}
+
+.note-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.note-cover {
+  width: 50px;
+  height: auto;
+  border-radius: 5px;
+  margin-right: 10px; /* Space between cover and info */
+}
+
+.note-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.note-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #48302D;
+  margin: 0;
+}
+
+.note-page {
+  font-size: 14px;
+  color: #777;
+}
+
+.edit-note-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #48302D;
+  padding: 0; /* Removes extra padding for a cleaner look */
+}
+
+.note-content {
+  font-size: 14px;
+  color: #555;
+  margin-top: 8px;
+  line-height: 1.6; /* Improves readability */
+}
+
+
+/*TOGGLE*/
+
+
+.toggle-container {
+  display: flex;
+  border: 2px solid #5A3D31;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 358px;
+}
+
+.toggle-button {
+  flex: 1;
+  padding: 5px 15px; /* Reduce padding to make buttons shorter */
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  background-color: #fff;
+  color: #5A3D31;
+}
+
+.toggle-button.active {
+  background-color: #5A3D31;
+  color: #fff;
+}
+
+
+/* Rounded corners for left and right buttons */
+.toggle-button:first-child {
+  border-radius: 20px 0 0 20px;
+}
+
+.toggle-button:last-child {
+  border-radius: 0 20px 20px 0;
+}
+
+
+
