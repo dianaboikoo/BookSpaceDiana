@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import NoteCard from "../components/NoteCard";
 import { useNavigate } from 'react-router-dom';
+import BottomNav from '../components/BottomNav';
 
 const DATABASE_URL = "https://bookspace-f063f-default-rtdb.firebaseio.com/notes";
 
@@ -18,6 +19,7 @@ export default function MyNotesPage() {
             id,
             ...data[id],
           }))
+           .filter((item) => item.type === "quote")
         : [];
       setNotes(notesArray);
     } catch (error) {
@@ -65,6 +67,7 @@ export default function MyNotesPage() {
             deleteNote={deleteNote}
           />
         ))}
+        <BottomNav />
       </div>
     </section>
   );

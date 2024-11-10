@@ -242,6 +242,7 @@
 
 .notes-page {
   width: 100vw; 
+  height: 100vw; 
   max-width: 390px;
   margin: 0 auto;
   padding: 16px;
@@ -249,6 +250,8 @@
   color: #333;
   box-sizing: border-box;
   overflow-y: auto;
+
+ 
 }
 
 .notes-page h2 {
