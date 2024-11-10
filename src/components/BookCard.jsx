@@ -1,3 +1,4 @@
+/*Made by Diana Boiko*/
 import PropTypes from 'prop-types';
 
 function BookCard({ book }) {

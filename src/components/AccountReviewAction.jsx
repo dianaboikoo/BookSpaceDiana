@@ -1,4 +1,4 @@
-import React from 'react';
+/*Made by Diana Boiko*/
 import "../styles/AccountPageStyle.css";
 
 const ReviewActions = () => {

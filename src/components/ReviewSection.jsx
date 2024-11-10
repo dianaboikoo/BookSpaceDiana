@@ -1,3 +1,4 @@
+/*Made by Diana Boiko*/
 import React, { useEffect, useState } from "react";
 import ReviewCard from "./ReviewCard";
 import ReviewInput from "./ReviewInput";

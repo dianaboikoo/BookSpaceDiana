@@ -1,5 +1,5 @@
+/*Made by Ola Ciesla*/
 import React from "react";
-
 
 function Tabs({ activeTab, setActiveTab }) {
  return (

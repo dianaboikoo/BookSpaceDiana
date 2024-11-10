@@ -1,6 +1,5 @@
+/*Made by Ola Ciesla*/
 import React from "react";
-
-
 
 function ChatItem({ chat }) {
  return (

@@ -1,4 +1,4 @@
-import React from "react";
+/*Made by Diana Boiko*/
 import { useNavigate } from 'react-router-dom';
 import "../styles/AccountPageStyle.css";
 import BottomNav from '../components/BottomNav';

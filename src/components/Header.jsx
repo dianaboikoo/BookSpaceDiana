@@ -1,6 +1,4 @@
-import React from "react";
-
-
+/*Made by Ola Ciesla*/
 
 function Header() {
  return (

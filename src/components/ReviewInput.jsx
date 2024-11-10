@@ -1,3 +1,4 @@
+/*Made by Diana Boiko*/
 import React, { useState } from "react";
 import "../styles/HomePageStyle.css";
 

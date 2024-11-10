@@ -1,5 +1,4 @@
-
-
+/*Made by Ola Ciesla*/
 import { useEffect, useState } from "react";
 /*import Header from "../components/Header";
 import SearchBar from "../components/SearchBar";

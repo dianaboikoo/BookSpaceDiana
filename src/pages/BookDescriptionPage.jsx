@@ -1,4 +1,4 @@
-import React from 'react';
+/*Made by Diana Boiko*/
 import { useParams } from "react-router-dom";
 import BookSection from '../components/BookSection';
 import BottomNav from '../components/BottomNav';

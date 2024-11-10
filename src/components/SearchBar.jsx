@@ -1,4 +1,4 @@
-import React from 'react';
+/*Made by Diana Boiko*/
 import { FiSearch } from 'react-icons/fi'; // Import the search icon
 import { useNavigate } from 'react-router-dom';
 import '../styles/HomePageStyle.css';

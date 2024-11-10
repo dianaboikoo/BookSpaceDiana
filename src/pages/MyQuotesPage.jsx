@@ -1,3 +1,4 @@
+/*Made by Diana Boiko*/
 import React, { useEffect, useState } from "react";
 import NoteCard from "../components/NoteCard";
 import { useNavigate } from 'react-router-dom';

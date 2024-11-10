@@ -1,3 +1,4 @@
+/*Made by Ola Ciesla*/
 import React from "react";
 import ChatItem from "./ChatItem";
 

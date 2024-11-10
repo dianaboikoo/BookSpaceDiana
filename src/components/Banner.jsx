@@ -1,3 +1,4 @@
+/*Made by Diana Boiko*/
 import React, { useState, useEffect } from 'react';
 
 // Define the paths to the images in the public folder

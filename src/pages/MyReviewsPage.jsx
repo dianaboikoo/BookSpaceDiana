@@ -1,3 +1,4 @@
+/*Made by Diana Boiko*/
 import React, { useEffect, useState } from 'react';
 import AccountReviewCard from '../components/AccountReviewCard';
 import BottomNav from '../components/BottomNav';

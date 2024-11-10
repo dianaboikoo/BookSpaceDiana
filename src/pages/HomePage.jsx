@@ -1,4 +1,4 @@
-import React from 'react';
+/*Made by Diana Boiko*/
 import SearchBar from '../components/SearchBar';
 import Banner from '../components/Banner';
 import BookSection from '../components/BookSection';
