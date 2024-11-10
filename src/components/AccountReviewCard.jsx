@@ -1,8 +1,50 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import "../styles/AccountPageStyle.css";
+import React, { useState } from "react";
+import PropTypes from "prop-types";
 
-const ReviewCard = ({ review }) => {
+const DATABASE_URL = "https://bookspace-f063f-default-rtdb.firebaseio.com/reviews";
+
+const AccountReviewCard = ({ review, onReviewUpdated, onReviewDeleted }) => {
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedContent, setEditedContent] = useState(review.usercomment);
+  const [editedRating, setEditedRating] = useState(review.userrating);
+
+  const handleUpdate = async () => {
+    try {
+      const updatedReview = {
+        ...review,
+        usercomment: editedContent,
+        userrating: editedRating,
+        updated_at: new Date().toISOString(),
+      };
+
+      const response = await fetch(`${DATABASE_URL}/${review.id}.json`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updatedReview),
+      });
+
+      if (!response.ok) throw new Error("Failed to update review");
+
+      onReviewUpdated(updatedReview);
+      setIsEditing(false);
+    } catch (error) {
+      console.error("Error updating review:", error);
+      alert("An error occurred while updating the review. Please try again.");
+    }
+  };
+
+  const handleDelete = async () => {
+    try {
+      const response = await fetch(`${DATABASE_URL}/${review.id}.json`, { method: "DELETE" });
+      if (!response.ok) throw new Error("Failed to delete review");
+
+      onReviewDeleted(review.id);
+    } catch (error) {
+      console.error("Error deleting review:", error);
+      alert("An error occurred while deleting the review. Please try again.");
+    }
+  };
+
   return (
     <div className="account-review-card">
       <div className="review-header">
@@ -11,26 +53,61 @@ const ReviewCard = ({ review }) => {
           <p className="review-username">{review.username}</p>
           <p className="review-date">{new Date(review.userdate).toLocaleDateString()}</p>
         </div>
-        <i className="review-options">•••</i>
       </div>
-      <div className="review-rating">{"★".repeat(review.userrating)}{"☆".repeat(5 - review.userrating)}</div>
-      <p className="review-comment">{review.usercomment}</p>
+
+      <div className="review-rating">
+        {isEditing ? (
+          <input
+            type="number"
+            min="1"
+            max="5"
+            value={editedRating}
+            onChange={(e) => setEditedRating(Number(e.target.value))}
+            className="edit-rating-input"
+          />
+        ) : (
+          "★".repeat(review.userrating) + "☆".repeat(5 - review.userrating)
+        )}
+      </div>
+
+      {isEditing ? (
+        <textarea
+          className="edit-comment-input"
+          value={editedContent}
+          onChange={(e) => setEditedContent(e.target.value)}
+        />
+      ) : (
+        <p className="review-comment">{review.usercomment}</p>
+      )}
+
       <div className="review-actions">
-        <button className="helpful-button">👍 Helpful (1)</button>
-        <button className="not-helpful-button">👎 Not helpful (1)</button>
+        {isEditing ? (
+          <>
+            <button onClick={handleUpdate} className="save-button">Save</button>
+            <button onClick={() => setIsEditing(false)} className="cancel-button">Cancel</button>
+          </>
+        ) : (
+          <>
+            <button onClick={() => setIsEditing(true)} className="edit-button">Edit</button>
+            <button onClick={handleDelete} className="delete-button">Delete</button>
+          </>
+        )}
       </div>
     </div>
   );
 };
 
-ReviewCard.propTypes = {
+AccountReviewCard.propTypes = {
   review: PropTypes.shape({
+    id: PropTypes.string.isRequired,
     username: PropTypes.string.isRequired,
     userpicture: PropTypes.string.isRequired,
     userrating: PropTypes.number.isRequired,
     usercomment: PropTypes.string.isRequired,
     userdate: PropTypes.string.isRequired,
   }).isRequired,
+  onReviewUpdated: PropTypes.func.isRequired,
+  onReviewDeleted: PropTypes.func.isRequired,
 };
 
-export default ReviewCard;
+export default AccountReviewCard;

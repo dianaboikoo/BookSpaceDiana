@@ -113,12 +113,16 @@
 }
 
 .book-title {
-  font-size: 14px;
-  font-weight: bold;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; 
-  width: 90px; 
+  font-size: 14px; /* Adjust as needed */
+  font-weight: 600; /* Semi-bold */
+    text-align: left; /* Align text to the left */
+    white-space: normal; /* Allows text to wrap */
+    overflow: hidden; /* Ensures text doesn’t overflow the container */
+    display: -webkit-box; /* Required for multiline truncation */
+    -webkit-line-clamp: 2; /* Limits text to 2 lines */
+    -webkit-box-orient: vertical; /* Required for multiline truncation */
+    text-overflow: ellipsis; /* Adds ellipsis if text overflows */
+    
 }
 
 
@@ -166,7 +170,7 @@
   margin-top: 16px;
 }
 
-.book-title {
+.book-title-description {
   text-align: center;
     white-space: nowrap;
     overflow: hidden;

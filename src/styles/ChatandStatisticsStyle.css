@@ -28,7 +28,7 @@ body {
 /* CommunityPage Styling */
 .community-page,
 .timer-page,
-.note-page,
+.note-page-timer,
 .search-page {
  display: flex;
  flex-direction: column;
@@ -83,7 +83,7 @@ body {
 
 
 /* Search Bar */
-.search-bar {
+.search-bar-community {
  display: flex;
  align-items: center;
  background-color: #eee;
@@ -94,7 +94,7 @@ body {
 }
 
 
-.search-bar input {
+.search-bar-community input {
  flex: 1;
  border: none;
  background: none;
@@ -105,7 +105,7 @@ body {
 }
 
 
-.search-icon {
+.search-icon-community {
  font-size: 18px;
  cursor: pointer;
  color: #4a2e26;
@@ -138,8 +138,8 @@ body {
 
 
 .tab.active {
- background-color: #4a2e26;
- color: white;
+ background-color: #f9f9f9;
+ color: #4a2e26;
 }
 
 
@@ -275,7 +275,7 @@ body {
 }
 
 
-.notes-list {
+.notes-list-timer {
  width: 100%;
  margin-top: 16px;
 }
@@ -294,12 +294,6 @@ body {
  text-align: left;
 }
 
-
-.note-content {
- font-size: 16px;
- color: #333;
- margin-bottom: 8px;
-}
 
 
 .note-date {
@@ -367,6 +361,7 @@ body {
  grid-template-columns: 1fr 1fr;
  gap: 12px;
  width: 100%;
+ 
 }
 
 
@@ -388,6 +383,11 @@ body {
  text-align: center;
  height: 100%;
 }
+
+.genre-overlay span {
+  color: #4a2e26;
+}
+
 
 
 /* Filters List */
@@ -501,36 +501,40 @@ body {
 
 /* Control Buttons */
 .controls {
- display: flex;
- justify-content: space-around;
- width: 100%;
- margin-top: 16px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  gap: 20px; /* Adds space between each button */
 }
-
 
 .control-button {
- display: flex;
- align-items: center;
- justify-content: center;
- flex-direction: column;
- border: 1px solid #4a2e26;
- border-radius: 50%;
- width: 80px;
- height: 80px;
- background-color: white;
- color: #4a2e26;
- font-size: 24px;
- font-weight: bold;
- cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background-color: white;
+  border: 2px solid #4a2e26;
+  border-radius: 50%;
+  font-size: 18px;
+  color: #4a2e26;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
+.control-button:hover {
+  background-color: #f4f2f0;
+}
 
 .control-button span {
- font-size: 14px;
- color: #4a2e26;
- margin-top: 4px;
- text-align: center;
+  font-size: 14px;
+  margin-top: 4px;
+  color: #4a2e26;
 }
+
 
 
 .statistics-page {
@@ -634,7 +638,7 @@ h2 {
 }
 
 
-.book-cover {
+.book-cover-chart {
  width: 90px;
  height: 120px;
  background-size: cover;

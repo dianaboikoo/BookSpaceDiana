@@ -133,7 +133,7 @@ function NotePage() {
 
 
  return (
-   <div className="note-page">
+   <div className="note-page-timer">
      {/* Header */}
      <header className="header">
        <button className="back-button" onClick={() => navigate(-1)}>
@@ -163,7 +163,7 @@ function NotePage() {
 
 
      {/* Note List */}
-     <div className="note-list">
+     <div className="note-list-timer">
        {notes
          .filter((note) => note.type === activeTab.toLowerCase())
          .map((note) => (

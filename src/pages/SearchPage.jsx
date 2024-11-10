@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import BottomNav from '../components/BottomNav';
 import '../styles/ChatandStatisticsStyle.css';
 
 
@@ -25,9 +26,9 @@ function SearchPage() {
  return (
    <div className="search-page">
      {/* Search Bar */}
-     <div className="search-bar">
+     <div className="search-bar-community">
        <input type="text" placeholder="Search..." />
-       <button className="search-icon">🔍</button>
+       <button className="search-icon-community">🔍</button>
      </div>
 
 
@@ -101,12 +102,7 @@ function SearchPage() {
 
 
      {/* Bottom Navigation */}
-     <footer className="bottom-nav">
-       <button className="nav-icon">🏠</button>
-       <button className="nav-icon">💬</button>
-       <button className="nav-icon">📊</button>
-       <button className="nav-icon">👤</button>
-     </footer>
+     <BottomNav />
    </div>
  );
 }

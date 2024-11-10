@@ -59,11 +59,11 @@ function StatisticsPage() {
        <p>2 of 8 books</p>
        <div className="books-grid">
          <div
-           className="book-cover"
+           className="book-cover-chart"
            style={{ backgroundImage: "url('/path/to/book1.jpg')" }}
          ></div>
          <div
-           className="book-cover"
+           className="book-cover-chart"
            style={{ backgroundImage: "url('/path/to/book2.jpg')" }}
          ></div>
          <div className="book-cover empty"></div>

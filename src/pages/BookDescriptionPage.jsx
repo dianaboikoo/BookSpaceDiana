@@ -8,10 +8,12 @@ import BookStats from "../components/BookStats";
 import BookActions from '../components/BookActions';
 import BookDescription from "../components/BookDescription";
 import ReviewSection from "../components/ReviewSection";
+import { useNavigate } from "react-router-dom";
 import '../styles/HomePageStyle.css';
 
 export default function BookDescriptionPage() {
   const { bookId } = useParams();
+  const navigate = useNavigate();
 
   if (!bookId) {
     return <p>Book ID not found in URL.</p>;
@@ -19,6 +21,7 @@ export default function BookDescriptionPage() {
 
   return (
     <div className="book-page">
+      <button className="back-button" onClick={() => navigate(-1)}>🔙</button>
       <BookCover bookId={bookId} />
       <BookTitle bookId={bookId} />
       <BookActions />

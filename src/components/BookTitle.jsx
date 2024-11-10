@@ -22,7 +22,7 @@ const BookTitle = ({ bookId }) => {
 
   return (
     <div className="book-title-section">
-      <h1 className="book-title">{title}</h1>
+      <h1 className="book-title-description">{title}</h1>
       <p className="book-author">by {author}</p>
     </div>
   );

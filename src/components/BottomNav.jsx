@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import '../styles/HomePageStyle.css';
 
 function BottomNav() {
   return (
