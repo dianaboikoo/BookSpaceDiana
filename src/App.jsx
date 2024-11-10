@@ -6,6 +6,14 @@ import BookDescriptionPage from './pages/BookDescriptionPage';
 import MyReviewsPage from './pages/MyReviewsPage';
 import MyNotesPage from './pages/MyNotesPage';
 import MyQuotesPage from './pages/MyQuotesPage';
+import CommunityPage from "./pages/CommunityPage";
+import StatisticsPage from "./pages/StatisticsPage";
+import TimerPage from "./pages/TimerPage";
+import NotePage from "./pages/NotePage";
+import SearchPage from "./pages/SearchPage";
+
+
+
 
 function App() {
   return (
@@ -18,6 +26,13 @@ function App() {
           <Route path="/myreviews" element={<MyReviewsPage />} />
           <Route path="/mynotes" element={<MyNotesPage />} />
           <Route path="/myquotes" element={<MyQuotesPage />} />
+
+          <Route path="/community" element={<CommunityPage />} />
+         <Route path="/statistics" element={<StatisticsPage />} />
+         <Route path="/timer" element={<TimerPage />} />
+         <Route path="/note" element={<NotePage />} />
+         <Route path="/search" element={<SearchPage />} />
+
         </Routes>
       </main>
     </Router>

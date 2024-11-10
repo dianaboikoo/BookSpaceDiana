@@ -1,0 +1,666 @@
+#root {
+ max-width: 390px;
+ margin: 0 auto;
+ padding: 0;
+ text-align: center;
+}
+
+
+.app-container {
+ max-width: 390px;
+ margin: 0 auto;
+ box-sizing: border-box;
+}
+
+
+/* Global Body */
+body {
+ margin: 0;
+ padding: 0;
+ font-family: Arial, sans-serif;
+ background-color: #f4f2f0;
+ max-width: 390px;
+ margin: 0 auto;
+ overflow-x: hidden;
+}
+
+
+/* CommunityPage Styling */
+.community-page,
+.timer-page,
+.note-page,
+.search-page {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ padding: 16px;
+ background-color: #f4f2f0;
+ max-width: 390px;
+ margin: 0 auto;
+ padding-bottom: 80px; /* Extra bottom padding to avoid overlap with bottom nav */
+ box-sizing: border-box;
+}
+
+
+/* Header */
+.header {
+ position: fixed;
+ top: 0;
+ left: 0;
+ right: 0;
+ background-color: #f4f2f0;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 16px; /* Space around header content */
+ box-sizing: border-box;
+ z-index: 10; /* Layer it above other elements */
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
+ max-width: 390px;
+ margin: 0 auto;
+}
+
+
+.header h1 {
+ font-size: 24px;
+ color: black;
+ padding: 16px;
+}
+
+
+.icons {
+ display: flex;
+ gap: 8px;
+}
+
+
+.icon {
+ font-size: 20px;
+ cursor: pointer;
+ background: none;
+ border: none;
+}
+
+
+/* Search Bar */
+.search-bar {
+ display: flex;
+ align-items: center;
+ background-color: #eee;
+ border-radius: 8px;
+ padding: 8px;
+ width: 100%;
+ margin: 16px 0;
+}
+
+
+.search-bar input {
+ flex: 1;
+ border: none;
+ background: none;
+ outline: none;
+ padding-left: 8px;
+ font-size: 16px;
+ color: #4a2e26;
+}
+
+
+.search-icon {
+ font-size: 18px;
+ cursor: pointer;
+ color: #4a2e26;
+ background: none;
+ border: none;
+}
+
+
+/* Tabs */
+.tabs {
+ display: flex;
+ justify-content: space-around;
+ width: 100%;
+ margin: 8px 0 16px;
+}
+
+
+.tab {
+ flex: 1;
+ text-align: center;
+ padding: 10px 0;
+ border-radius: 12px;
+ border: 1px solid #4a2e26;
+ background-color: #f9f9f9;
+ cursor: pointer;
+ color: #4a2e26;
+ font-size: 16px;
+ transition: background-color 0.3s ease;
+}
+
+
+.tab.active {
+ background-color: #4a2e26;
+ color: white;
+}
+
+
+/* Chat Item */
+.chat-list {
+ width: 100%;
+}
+
+
+.chat-item {
+ display: flex;
+ align-items: center;
+ padding: 12px 0;
+ border-bottom: 1px solid #e0e0e0;
+}
+
+
+.chat-image {
+ width: 50px;
+ height: 50px;
+ border-radius: 50%;
+ margin-right: 12px;
+}
+
+
+.chat-info {
+ display: flex;
+ flex-direction: column;
+ flex: 1;
+}
+
+
+.chat-header {
+ display: flex;
+ justify-content: space-between;
+ width: 100%;
+}
+
+
+.chat-name {
+ font-weight: bold;
+ color: #000;
+}
+
+
+.unread-dot {
+ width: 8px;
+ height: 8px;
+ background-color: #007aff;
+ border-radius: 50%;
+ margin-left: 8px;
+}
+
+
+.chat-message {
+ color: #555;
+ font-size: 14px;
+}
+
+
+.chat-time {
+ color: #888;
+ font-size: 12px;
+}
+
+
+/* New Chat Form */
+.new-chat-form {
+ display: flex;
+ flex-direction: column;
+ width: 100%;
+ padding: 16px 0;
+}
+
+
+.new-chat-form input {
+ padding: 8px;
+ margin-bottom: 8px;
+ border-radius: 8px;
+ border: 1px solid #e0e0e0;
+ font-size: 14px;
+ width: 100%;
+}
+
+
+.new-chat-form button {
+ padding: 10px;
+ border-radius: 8px;
+ background-color: #4a2e26;
+ color: white;
+ border: none;
+ cursor: pointer;
+}
+
+
+/* Bottom Navigation */
+.bottom-nav {
+ position: fixed;
+ bottom: 0;
+ left: 0;
+ right: 0;
+ display: flex;
+ justify-content: space-around;
+ padding: 16px 0;
+ background-color: #f4f2f0; /* Background color for contrast */
+ border-top: 1px solid #e0e0e0;
+ max-width: 390px;
+ margin: 0 auto;
+ z-index: 10;
+}
+
+
+.nav-icon {
+ font-size: 24px;
+ cursor: pointer;
+ background: none;
+ border: none;
+}
+
+
+/* Note Page */
+.note-input {
+ width: 350px;
+ padding: 12px;
+ font-size: 18px;
+ color: #333;
+ border: 1px solid #e0e0e0;
+ border-radius: 12px;
+ background-color: #f9f9f9; /* Updated for a lighter background */
+ resize: none;
+ outline: none;
+ margin-top: 16px;
+}
+
+
+.notes-list {
+ width: 100%;
+ margin-top: 16px;
+}
+
+
+.note-item {
+ background-color: #f0f0f0;
+ padding: 16px;
+ border-radius: 8px;
+ margin-bottom: 12px;
+ display: flex;
+ flex-direction: column;
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+ color: black;
+ width: 350px;
+ text-align: left;
+}
+
+
+.note-content {
+ font-size: 16px;
+ color: #333;
+ margin-bottom: 8px;
+}
+
+
+.note-date {
+ font-size: 12px;
+ color: #888;
+ margin-bottom: 8px;
+}
+
+
+.note-actions {
+ display: flex;
+ gap: 8px;
+}
+
+
+.add-button {
+ background-color: #4a2e26;
+}
+.note-actions button {
+ background-color: #4a2e26; /* Main button color */
+ color: white;
+ border: none;
+ border-radius: 8px;
+ padding: 8px 16px; /* Larger padding for button */
+ cursor: pointer;
+ font-size: 14px;
+ font-weight: bold; /* Bold text for better visibility */
+ transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+
+.note-actions button:hover {
+ background-color: #6a473d; /* Darker shade on hover */
+}
+
+
+.save-cancel-buttons {
+ display: flex;
+ justify-content: center;
+ gap: 12px;
+ margin-top: 16px;
+}
+
+
+.save-cancel-buttons button {
+ background-color: #4a2e26;
+ color: white;
+ border: none;
+ border-radius: 8px;
+ padding: 8px 16px;
+ cursor: pointer;
+ font-size: 14px;
+ transition: background-color 0.3s ease;
+}
+
+
+.save-cancel-buttons button:hover {
+ background-color: #6a473d;
+}
+
+
+/* Genres Grid */
+.genres-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 12px;
+ width: 100%;
+}
+
+
+.genre-card {
+ position: relative;
+ height: 100px;
+ background-color: #ccc;
+ border-radius: 8px;
+}
+
+
+.genre-overlay {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: white;
+ font-size: 18px;
+ font-weight: bold;
+ text-align: center;
+ height: 100%;
+}
+
+
+/* Filters List */
+.filters-list {
+ display: flex;
+ flex-direction: column;
+ width: 100%;
+ margin-top: 16px;
+}
+
+
+.filter-item {
+ color: #4a2e26;
+ font-weight: bold;
+ padding: 12px;
+}
+
+
+.filter-header {
+ display: flex;
+ justify-content: space-between;
+ font-size: 18px;
+ color: #4a2e26;
+}
+
+
+.dropdown-icon {
+ font-size: 14px;
+ color: #4a2e26;
+}
+
+
+/* Timer Display */
+.timer-display h1 {
+ font-size: 48px;
+ color: #4a2e26;
+}
+
+
+/* General Layout for Timer Page */
+.timer-page {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ padding: 16px;
+ background-color: #f9f9f9;
+ height: 100vh;
+ box-sizing: border-box;
+ max-width: 390px;
+ margin: 0 auto;
+ padding-top: 80px; /* Extra space for the sticky header */
+}
+
+
+/* Sticky Header */
+.header {
+ position: fixed;
+ top: 0;
+ left: 0;
+ right: 0;
+ background-color: #f9f9f9;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 16px;
+ max-width: 390px;
+ margin: 0 auto;
+ box-sizing: border-box;
+ z-index: 10;
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.back-button,
+.finish-button {
+ background-color: #4a2e26;
+ color: white;
+ border: none;
+ border-radius: 8px;
+ width: 48px;
+ height: 48px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-size: 18px;
+ cursor: pointer;
+}
+
+
+/* Timer Button */
+.timer-button {
+ border: 1px solid #4a2e26;
+ border-radius: 8px;
+ background-color: white;
+ font-size: 16px;
+ color: #4a2e26;
+ padding: 8px 16px;
+ cursor: pointer;
+ margin-bottom: 16px;
+ font-weight: bold;
+}
+
+
+/* Timer Display */
+.timer-display h1 {
+ font-size: 48px;
+ color: #4a2e26;
+ margin: 16px 0;
+}
+
+
+/* Control Buttons */
+.controls {
+ display: flex;
+ justify-content: space-around;
+ width: 100%;
+ margin-top: 16px;
+}
+
+
+.control-button {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+ border: 1px solid #4a2e26;
+ border-radius: 50%;
+ width: 80px;
+ height: 80px;
+ background-color: white;
+ color: #4a2e26;
+ font-size: 24px;
+ font-weight: bold;
+ cursor: pointer;
+}
+
+
+.control-button span {
+ font-size: 14px;
+ color: #4a2e26;
+ margin-top: 4px;
+ text-align: center;
+}
+
+
+.statistics-page {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ padding-left: 16px;
+ padding-top: 130px;
+ padding-bottom: 80px;
+ max-width: 390px;
+ margin: 0 auto;
+ box-sizing: border-box;
+}
+
+
+h1 {
+ font-size: 24px;
+ color: #4a2e26;
+}
+
+
+.tabs {
+ display: flex;
+ justify-content: space-around;
+ width: 100%;
+ margin: 8px 0 16px;
+}
+
+
+.tab {
+ flex: 1;
+ text-align: center;
+ padding: 8px 0;
+ border-radius: 8px;
+ cursor: pointer;
+ font-weight: bold;
+ color: #4a2e26;
+}
+
+
+.tab.active {
+ background-color: #4a2e26;
+ color: white;
+}
+
+
+.goals-section,
+.statistics-section,
+.challenge-section {
+ width: 100%;
+ padding: 16px;
+ color: black;
+ text-align: left;
+}
+
+
+h2 {
+ font-size: 20px;
+ color: #4a2e26;
+}
+
+
+.progress-bar {
+ background-color: #e0e0e0;
+ border-radius: 8px;
+ width: 350px;
+ height: 10px;
+ margin-top: 4px;
+ position: relative;
+}
+
+
+.progress {
+ background-color: #4a2e26;
+ height: 100%;
+ border-radius: 8px;
+}
+
+
+.chart-container {
+ width: 100%;
+ height: 270px;
+ color: black;
+}
+
+
+.chart-image {
+ width: 100%;
+ height: auto;
+ border-radius: 8px;
+}
+
+
+.books-grid {
+ display: flex;
+ gap: 8px;
+ overflow-x: auto; /* Enables horizontal scrolling */
+ padding-bottom: 8px; /* Space at the bottom for easier scrolling */
+ scrollbar-width: thin; /* Firefox: makes the scrollbar thinner */
+ -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+
+.book-cover {
+ width: 90px;
+ height: 120px;
+ background-size: cover;
+ background-position: center;
+ border-radius: 8px;
+ flex-shrink: 0; /* Prevents flex items from shrinking */
+}
+
+
+.book-cover.empty {
+ background-color: #e0e0e0;
+}
+
+
+/* Optional: Customize the scrollbar for Webkit browsers */
+.books-grid::-webkit-scrollbar {
+ height: 6px;
+}
+
+
+.books-grid::-webkit-scrollbar-thumb {
+ background-color: #ccc;
+ border-radius: 3px;
+}
+
+
+.books-grid::-webkit-scrollbar-track {
+ background-color: #f0f0f0;
+}
