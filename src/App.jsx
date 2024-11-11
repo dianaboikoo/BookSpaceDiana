@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import AccountPage from './pages/AccountPage';
@@ -12,7 +13,13 @@ import TimerPage from "./pages/TimerPage";
 import NotePage from "./pages/NotePage";
 import SearchPage from "./pages/SearchPage";
 
-
+ReactDOM.createRoot(document.getElementById("root")).render(
+    <React.StrictMode>
+        <BrowserRouter basename={import.meta.env.DEV ? "/" : "/book-space-app/"}>
+            <App />
+        </BrowserRouter>
+    </React.StrictMode>
+);
 
 
 function App() {
