@@ -11,6 +11,7 @@ import SearchPage from "./pages/SearchPage";
 import StatisticsPage from "./pages/StatisticsPage";
 import TimerPage from "./pages/TimerPage";
 
+
 function App() {
   return (
     <main>
