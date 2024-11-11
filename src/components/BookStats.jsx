@@ -3,9 +3,9 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 const BookStats = ({ bookId }) => {
-  const [genre, setGenre] = useState("");
-  const [pages, setPages] = useState(0);
-  const [rating, setRating] = useState(0);
+  const [genre, setGenre] = useState(""); // Stores book genre
+  const [pages, setPages] = useState(0); // Stores book page count
+  const [rating, setRating] = useState(0); // Stores book rating
 
   useEffect(() => {
     const fetchBookStats = async () => {
@@ -20,14 +20,14 @@ const BookStats = ({ bookId }) => {
       }
     };
 
-    fetchBookStats();
+    fetchBookStats(); // Fetches book stats on component load
   }, [bookId]);
 
   return (
     <div className="book-stats">
-      <span>⭐️ {rating} </span>
-      <span>📚 {genre}</span>
-      <span>📖 {pages} pages</span> 
+      <span>⭐️ {rating} </span> {/* Displays book rating */}
+      <span>📚 {genre}</span> {/* Displays book genre */}
+      <span>📖 {pages} pages</span> {/* Displays number of pages */}
     </div>
   );
 };

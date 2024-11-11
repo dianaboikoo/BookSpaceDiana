@@ -1,11 +1,8 @@
 /*Made by Ola Ciesla*/
 import { useNavigate } from "react-router-dom"; // Assumes you're using react-router
 
-
-
 function ChatPage() {
  const navigate = useNavigate();
-
 
  // Sample messages (you may want to fetch these from an API or use state for dynamic messages)
  const messages = [

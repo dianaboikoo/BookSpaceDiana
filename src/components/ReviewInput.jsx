@@ -3,19 +3,19 @@ import React, { useState } from "react";
 import "../styles/HomePageStyle.css";
 
 const ReviewInput = ({ onAddReview }) => {
-  const [reviewText, setReviewText] = useState("");
+  const [reviewText, setReviewText] = useState(""); // Holds the input text for new review
 
   const handleSubmit = () => {
     if (reviewText.trim()) {
       const newReview = {
-        username: "JohnDoe", // Set appropriate username or get it from user state
-        userpicture: "profile.jpg", // Placeholder or actual profile URL
-        userrating: 4, // Set rating here or add input for it
+        username: "JohnDoe", // Placeholder username
+        userpicture: "profile.jpg", // Placeholder profile picture
+        userrating: 4, // Placeholder rating
         usercomment: reviewText,
         userdate: new Date().toISOString(),
       };
-      onAddReview(newReview);
-      setReviewText("");
+      onAddReview(newReview); // Calls parent function to add review
+      setReviewText(""); // Clears input field
     }
   };
 

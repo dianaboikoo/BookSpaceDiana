@@ -4,12 +4,12 @@ import PropTypes from "prop-types";
 import "../styles/HomePageStyle.css";
 
 const ReviewCard = ({ review, onDelete, onEdit }) => {
-  const [isEditing, setIsEditing] = useState(false);
-  const [editedText, setEditedText] = useState(review.usercomment);
+  const [isEditing, setIsEditing] = useState(false); // Toggles edit mode
+  const [editedText, setEditedText] = useState(review.usercomment); // Holds edited text
 
   const handleSave = () => {
-    onEdit(review.id, { ...review, usercomment: editedText });
-    setIsEditing(false);
+    onEdit(review.id, { ...review, usercomment: editedText }); // Save edited review
+    setIsEditing(false); // Exit edit mode
   };
 
   return (
@@ -37,8 +37,8 @@ const ReviewCard = ({ review, onDelete, onEdit }) => {
         <p className="review-comment">{review.usercomment}</p>
       )}
       <div className="review-actions">
-        <button className="edit-button" onClick={() => setIsEditing(true)}>✏️ Edit</button>
-        <button className="delete-button" onClick={() => onDelete(review.id)}>🗑️ Delete</button>
+        <button className="edit-button" onClick={() => setIsEditing(true)}>✏️ Edit</button> {/* Enable editing */}
+        <button className="delete-button" onClick={() => onDelete(review.id)}>🗑️ Delete</button> {/* Delete review */}
       </div>
     </div>
   );

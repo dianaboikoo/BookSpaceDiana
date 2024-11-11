@@ -5,9 +5,9 @@ import PropTypes from "prop-types";
 const DATABASE_URL = "https://bookspace-f063f-default-rtdb.firebaseio.com/reviews";
 
 const AccountReviewCard = ({ review, onReviewUpdated, onReviewDeleted }) => {
-  const [isEditing, setIsEditing] = useState(false);
-  const [editedContent, setEditedContent] = useState(review.usercomment);
-  const [editedRating, setEditedRating] = useState(review.userrating);
+  const [isEditing, setIsEditing] = useState(false); // Tracks edit mode
+  const [editedContent, setEditedContent] = useState(review.usercomment); // Edited comment
+  const [editedRating, setEditedRating] = useState(review.userrating); // Edited rating
 
   const handleUpdate = async () => {
     try {
@@ -26,7 +26,7 @@ const AccountReviewCard = ({ review, onReviewUpdated, onReviewDeleted }) => {
 
       if (!response.ok) throw new Error("Failed to update review");
 
-      onReviewUpdated(updatedReview);
+      onReviewUpdated(updatedReview); // Update review in parent component
       setIsEditing(false);
     } catch (error) {
       console.error("Error updating review:", error);
@@ -39,7 +39,7 @@ const AccountReviewCard = ({ review, onReviewUpdated, onReviewDeleted }) => {
       const response = await fetch(`${DATABASE_URL}/${review.id}.json`, { method: "DELETE" });
       if (!response.ok) throw new Error("Failed to delete review");
 
-      onReviewDeleted(review.id);
+      onReviewDeleted(review.id); // Remove review in parent component
     } catch (error) {
       console.error("Error deleting review:", error);
       alert("An error occurred while deleting the review. Please try again.");

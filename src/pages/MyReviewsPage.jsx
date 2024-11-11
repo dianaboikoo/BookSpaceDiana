@@ -5,7 +5,7 @@ import BottomNav from '../components/BottomNav';
 import "../styles/AccountPageStyle.css";
 
 const MyReviewsPage = () => {
-  const [reviews, setReviews] = useState([]);
+  const [reviews, setReviews] = useState([]); // State to store fetched reviews
 
   useEffect(() => {
     const fetchReviews = async () => {
@@ -13,7 +13,7 @@ const MyReviewsPage = () => {
         const response = await fetch(`https://crud-test-c836c-default-rtdb.firebaseio.com/reviews.json`);
         const data = await response.json();
 
-        // Convert object to array
+        // Convert Firebase data object to array of reviews
         const reviewsArray = data
           ? Object.keys(data).map((key) => ({
               id: key,
@@ -21,13 +21,13 @@ const MyReviewsPage = () => {
             }))
           : [];
 
-        setReviews(reviewsArray);
+        setReviews(reviewsArray); // Update state with fetched reviews
       } catch (error) {
         console.error("Error fetching reviews:", error);
       }
     };
 
-    fetchReviews();
+    fetchReviews(); // Fetch reviews on initial render
   }, []);
 
   return (
@@ -35,10 +35,10 @@ const MyReviewsPage = () => {
       <h2>My reviews</h2>
       <div className="reviews-list">
         {reviews.map((review) => (
-          <AccountReviewCard key={review.id} review={review} />
+          <AccountReviewCard key={review.id} review={review} /> // Render individual review cards
         ))}
       </div>
-      <BottomNav />
+      <BottomNav /> {/* Bottom navigation for accessing other sections */}
     </div>
   );
 };

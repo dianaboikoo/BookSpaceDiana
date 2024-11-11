@@ -5,10 +5,10 @@ import '../styles/HomePageStyle.css';
 function BottomNav() {
   return (
     <div className="bottom-nav">
-      <NavLink to="/" className="nav-icon">🏠</NavLink>
-      <NavLink to="/community" className="nav-icon">💬</NavLink>
-      <NavLink to="/statistics" className="nav-icon">📊</NavLink>
-      <NavLink to="/account" className="nav-icon">👤</NavLink>
+      <NavLink to="/" className="nav-icon">🏠</NavLink> {/* Home */}
+      <NavLink to="/community" className="nav-icon">💬</NavLink> {/* Community */}
+      <NavLink to="/statistics" className="nav-icon">📊</NavLink> {/* Statistics */}
+      <NavLink to="/account" className="nav-icon">👤</NavLink> {/* Account */}
     </div>
   );
 }

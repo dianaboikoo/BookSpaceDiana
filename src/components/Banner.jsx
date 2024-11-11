@@ -9,21 +9,20 @@ const images = [
 ];
 
 const Banner = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0); // Tracks current image index
 
   useEffect(() => {
-    // Set an interval to update the index every 3 seconds
+    // Update index every 3 seconds
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // 3000ms = 3 seconds
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length); // Cycles through images
+    }, 3000);
 
-    // Clear the interval when the component unmounts
-    return () => clearInterval(interval);
+    return () => clearInterval(interval); // Clear interval on unmount
   }, []);
 
   return (
     <div className="banner">
-      <img src={images[currentIndex]} alt="Banner" className="banner-image" />
+      <img src={images[currentIndex]} alt="Banner" className="banner-image" /> {/* Displays current image */}
     </div>
   );
 };

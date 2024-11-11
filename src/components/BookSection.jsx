@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import BookCard from './BookCard';
 
 function BookSection({ title }) {
-  const [books, setBooks] = useState([]);
+  const [books, setBooks] = useState([]); // Holds list of books in the section
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -16,7 +16,7 @@ function BookSection({ title }) {
 
         const booksArray = Object.keys(data).map((key) => ({
           ...data[key],
-          firebaseKey: key,
+          firebaseKey: key, // Store Firebase key for each book
         }));
 
         setBooks(booksArray);
@@ -25,11 +25,11 @@ function BookSection({ title }) {
       }
     };
 
-    fetchBooks();
+    fetchBooks(); // Fetch books when the component mounts
   }, [title]);
 
   const handleClick = (bookId) => {
-    navigate(`/book/${bookId}`);
+    navigate(`/book/${bookId}`); // Navigate to book detail page
   };
 
   return (

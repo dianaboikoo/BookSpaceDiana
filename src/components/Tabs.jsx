@@ -5,20 +5,19 @@ function Tabs({ activeTab, setActiveTab }) {
  return (
    <div className="tabs">
      <button
-       className={`tab ${activeTab === "Community" ? "active" : ""}`}
-       onClick={() => setActiveTab("Community")}
+       className={`tab ${activeTab === "Community" ? "active" : ""}`} // Highlights active tab
+       onClick={() => setActiveTab("Community")} // Sets active tab to "Community"
      >
        Community
      </button>
      <button
-       className={`tab ${activeTab === "Chat" ? "active" : ""}`}
-       onClick={() => setActiveTab("Chat")}
+       className={`tab ${activeTab === "Chat" ? "active" : ""}`} // Highlights active tab
+       onClick={() => setActiveTab("Chat")} // Sets active tab to "Chat"
      >
        Chat
      </button>
    </div>
  );
 }
-
 
 export default Tabs;
